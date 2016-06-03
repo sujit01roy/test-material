@@ -1,0 +1,34 @@
+SQL queries
+
+1.desc film;
+2.select title,description from film;
+3.select title,rental_rate,rental_rate*0.2 as computed from film;
+4.select title,rental_rate,rental_rate*0.2 as increased_rent from film;
+5.select  distinct release_year from film;
+6.select * from film where rental_duration=6;
+7.select * from film where title like("African egg");
+8.select * from film where rental_rate< 1;
+9.select * from film where rental_rate between 2 AND 3;
+10.select * from film where film_id between 30 AND 220;
+11.
+     A.select * from actor where first_name like 's%';
+     B.select * from actor where first_name like '_n%';
+     C.select * from actor where first_name like '%o%';
+     D.select * from actor where first_name like '%a%';
+12.select * from rental where return_date is null;
+13.
+     A.select * from film where rental_duration=6 AND rental_rate<1;
+     B.select * from film where rental_duration=6 OR rental_rate<1;
+14.select * from film where rental_duration NOT in(3,4,5);
+15.
+     A.select first_name,last_name from customer order by last_name Asc;
+     B.select first_name,last_name from customer order by last_name Desc;
+16.select rental_rate,title from film order by rental_rate desc,title;
+17.
+18.select avg(rental_rate),max(rental_rate),min(rental_rate) from film;
+19.select avg(rental_rate),max(rental_rate),min(rental_rate) from film;
+20.select  film_id,count(film_id),rating from film group by rating;
+21.select  rental_duration,count(rental_duration),rating,count(rating) from film group by  film_id,rating;
+22.select rental_duration,count(rental_duration),rating,count(rating) from film group by  film_id,rating having rental_duration>3;
+23.
+24.

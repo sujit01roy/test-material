@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+   <script src="Testjs.js",language="JavaScript"> </script>
+	
+	
+
+</head>
+<body>
+<form>
+<div id="dynamic">
+    <label><b>Enter a Name</b></label><br/>
+
+  <input  type="text" name="userName[]" id="username"><br>
+  </div>
+</form>
+
+<input type="submit" id="submit" value="submit" onclick="addName(dynamic)"/><br/>
+<p><span id='display'></span> </p>
+
+
+
+</body>
+</html>
+
+var counter = 1
+function addName(divName){
+
+    var message_entered =  document.getElementById("username").value;
+
+	var newdiv = document.createElement('div');
+          newdiv.innerHTML = "Entry " + (counter + 1) + " <br><input type='text' name='userName[]'>";
+          document.getElementById(divName).appendChild(newdiv);
+	    counter++;
+    document.getElementById('display').innerHTML = message_entered;
+}

@@ -1,0 +1,21 @@
+<script>
+  var mcSlides = [];
+  function getSlides() {
+      if (mcSlides.length == 0) {
+          var slider = document.getElementById("slider");
+          var children = slider.childNodes;
+          for (var i = 0; i < children.length; i++) {
+              //assume slider's immediate children are all <img>, no <a>
+              if (children[i].tagName == "IMG")
+                  mcSlides.push(children[i]);
+          }
+      }
+      return mcSlides;
+  }
+  
+  function display(imgSrc, idx) {
+      mcSlides = getSlides();
+      mcSlides[idx].src = imgSrc;
+      imageSlider.displaySlide(idx, true, true);
+  }
+</script>

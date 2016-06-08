@@ -36,3 +36,68 @@ function addName(divName){
 	    counter++;
     document.getElementById('display').innerHTML = message_entered;
 }
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="Demojs.js",language="JavaScript"></script>
+</head>
+<body>
+
+
+    <label><b>Enter a Name</b></label><br/>
+
+  <input  type="text" name="userName[]" id="username"><br>
+
+
+<button onclick="addName()">OK</button>
+<button onclick="ascendingNames()">Ascending</button>
+<button onclick="descendingNames()">Descending</button>
+<p id="display"></p>
+
+
+<!--<input type="submit" id="submit" value="submit" onclick="addName()"/><br/>
+<p><span id='display'></span> </p>
+-->
+
+
+</body>
+</html>
+--------------------------------------------------------------------------------------------------------------------
+/**
+ * Created by skumar77 on 6/7/2016.
+ */
+
+var arr=[];
+function addName(){
+    var textBox,text;
+    textBox = document.getElementById("username");
+    var name=textBox.value;
+    if(arr.indexOf(name)==-1) {
+        arr.push(name);
+    }
+    else{
+        alert("duplicate");
+    }
+    text = "["+arr+"]";
+    textBox.value="";
+    document.getElementById("display").innerHTML =text;
+}
+function ascendingNames(){
+    arr.sort();
+    var text="["+arr+"]";
+    document.getElementById("display").innerHTML=text;
+}
+function descendingNames(){
+    arr.sort();
+    arr.reverse();
+    var text="["+arr+"]";
+    document.getElementById("display").innerHTML=text;
+}
